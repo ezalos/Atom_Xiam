@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   n_prime.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 20:44:10 by anonymou          #+#    #+#             */
-/*   Updated: 2018/11/06 20:44:15 by anonymous        ###   ########.fr       */
+/*   Created: 2018/11/26 21:40:58 by ldevelle          #+#    #+#             */
+/*   Updated: 2018/11/26 21:41:00 by ldevelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	ft_find_next_prime(int nb, int *prime_list)
   		{
   			if (nb % prime_list[x] == 0)
   			{
-//					if (++nb % 2 == 0)
-  					nb++;
+//				if (++nb % 2 == 0)
+  				nb++;
   				x = -1;
   			}
   			x++;
@@ -94,9 +94,10 @@ int main()
 {
 	clock_t t = clock();
 	double time_taken;
-  int limite = 105097564;	// stoping after founding X prime number
-											// int max is the 105 097 564th prime number 105097564
+  	int limite = 500;	// stoping after founding X prime number
+						// int max is the 105 097 564th prime number 105097564
 
+//	printf("%d\n", i);
 	printf("The %dth prime number is: %d\n", limite, find_n_prime(limite - 1));
 //	loop(limite);
 
