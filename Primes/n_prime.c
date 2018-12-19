@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 21:40:58 by ldevelle          #+#    #+#             */
-/*   Updated: 2018/11/26 21:41:00 by ldevelle         ###   ########.fr       */
+/*   Updated: 2018/12/15 23:53:43 by ldevelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,16 @@ int   *initialize(int *prime_list, int limite)
   return(prime_list);
 }
 
-int   find_n_prime(int limite)
+int		*find_n_prime(int limite)
 {
 	int compteur = 0;
   int *prime_list = NULL;
 
   if(!(prime_list = (int*)malloc((limite + 2) * sizeof(int))))
     {
-      printf("\tMALLOC Faillure!\n");
-      exit (1);
+      //printf("\tMALLOC Faillure!\n");
+	  //exit (1);
+      return (NULL);
     }
   prime_list = initialize(prime_list, limite + 1);
   prime_list[compteur] = 2;
@@ -65,12 +66,13 @@ int   find_n_prime(int limite)
   while (compteur++ < limite)
 	{
       prime_list[compteur] = ft_find_next_prime(prime_list[compteur - 1] + 1, prime_list);
-			printf("The %dth prime number is: %d\n", compteur + 1, prime_list[compteur]);
+	//		printf("The %dth prime number is: %d\n", compteur + 1, prime_list[compteur]);
 	}
 
   compteur = prime_list[compteur - 1];
-  free(prime_list);
-  return (compteur);
+  //free(prime_list);
+  //return (compteur);
+  return (prime_list);
 }
 
 /*
@@ -89,7 +91,7 @@ void   loop(int limite)
 }
 */
 
-
+/*
 int main()
 {
 	clock_t t = clock();
@@ -106,4 +108,4 @@ int main()
 	printf("Prime_finder took %f seconds to execute \n\n", time_taken);
 
   return (0);
-}
+}*/
