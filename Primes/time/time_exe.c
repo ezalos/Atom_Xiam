@@ -6,7 +6,7 @@
 /*   By: ldevelle <ldevelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 12:52:19 by ldevelle          #+#    #+#             */
-/*   Updated: 2018/12/23 03:34:22 by ldevelle         ###   ########.fr       */
+/*   Updated: 2018/12/23 03:47:41 by ldevelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ void	print_time(t_time *timee)
 		printf(_MAGENTA "%f s\n" _RESET, ((double)tmp->t));
 		printf(_GREEN "\t%dn" _RESET, tmp->nb_call);
 		ft_puttab_nb(ft_intlen(tmp->nb_call), tab);
-		printf(_CYAN "Rt:\t%f s/n\n" _RESET, (double)(tmp->t/tmp->nb_call));
+		printf(_CYAN "rT:\t%f s/n\n" _RESET, (double)(tmp->t/tmp->nb_call));
 		printf("\t________________________________________________________\n");
 		tmp = tmp->next;
 	}
